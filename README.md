@@ -44,7 +44,8 @@ pip install -r requirements.txt
 To run the project, run the following command in the terminal:
 
 ```bash
-python src/main.py
+cd src
+python main.py
 ```
 
 ## Project Report
