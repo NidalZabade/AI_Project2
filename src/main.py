@@ -5,6 +5,7 @@ from sklearn.neural_network import MLPClassifier
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import time
+import sys
 
 
 TEST_SIZE = 0.3
@@ -109,8 +110,12 @@ def evaluate(labels, predictions):
 
 
 def main():
-    # Load data from spreadsheet and split into train and test sets
-    features, labels = load_data("spambase.csv")
+    if len(sys.argv) != 2:
+        sys.exit("Usage: python template.py ./spambase.csv")
+    
+    file_name = sys.argv[1]
+    # Load data from spreadsheet and split into train and test sets if no arguments are given to the program
+    features, labels = load_data(file_name)
 
     features = preprocess(features)
 
