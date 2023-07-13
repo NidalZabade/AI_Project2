@@ -3,8 +3,6 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 import matplotlib.pyplot as plt
-from tqdm import tqdm
-import time
 import sys
 
 
@@ -190,14 +188,14 @@ def main():
     ax3.set_xticklabels(["Accuracy", "Precision", "Recall", "F1"])
     ax3.set_ylim([0, 1])
     ax3.set_title("MLP vs k-NN")
-    ax3.text(0, mlp_accuracy, round(mlp_accuracy, 2), ha="center", va="bottom")
-    ax3.text(1, mlp_precision, round(mlp_precision, 2), ha="center", va="bottom")
-    ax3.text(2, mlp_recall, round(mlp_recall, 2), ha="center", va="bottom")
-    ax3.text(3, mlp_f1, round(mlp_f1, 2), ha="center", va="bottom")
-    ax3.text(0.3, knn_accuracy, round(knn_accuracy, 2), ha="center", va="bottom")
-    ax3.text(1.3, knn_precision, round(knn_precision, 2), ha="center", va="bottom")
-    ax3.text(2.3, knn_recall, round(knn_recall, 2), ha="center", va="bottom")
-    ax3.text(3.3, knn_f1, round(knn_f1, 2), ha="center", va="bottom")
+    ax3.text(0, mlp_accuracy, round(mlp_accuracy, 3), ha="center", va="bottom")
+    ax3.text(1, mlp_precision, round(mlp_precision, 3), ha="center", va="bottom")
+    ax3.text(2, mlp_recall, round(mlp_recall, 3), ha="center", va="bottom")
+    ax3.text(3, mlp_f1, round(mlp_f1, 3), ha="center", va="bottom")
+    ax3.text(0.3, knn_accuracy, round(knn_accuracy, 3), ha="center", va="bottom")
+    ax3.text(1.3, knn_precision, round(knn_precision, 3), ha="center", va="bottom")
+    ax3.text(2.3, knn_recall, round(knn_recall, 3), ha="center", va="bottom")
+    ax3.text(3.3, knn_f1, round(knn_f1, 3), ha="center", va="bottom")
     ax3.legend(loc="lower right")
 
     plt.tight_layout()
