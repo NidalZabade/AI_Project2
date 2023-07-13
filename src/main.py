@@ -139,9 +139,7 @@ def main():
     print("Data preprocessed.")
 
     print("Plotting results...")
-    # progress bar
-    for i in tqdm(range(100)):
-        time.sleep(0.02)
+
 
     # Plot confusion matrix
     confusion_matrix_fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))

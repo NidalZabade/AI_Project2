@@ -45,7 +45,7 @@ To run the project, run the following command in the terminal:
 
 ```bash
 cd src
-python main.py
+python main.py spambase.csv
 ```
 
 ## Project Report
