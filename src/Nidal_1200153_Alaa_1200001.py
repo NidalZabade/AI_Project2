@@ -1,11 +1,10 @@
 import numpy as np
-import pandas as pd
+import csv
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 import matplotlib.pyplot as plt
 import sys
-import time
-from tqdm import tqdm
+
 
 TEST_SIZE = 0.3
 K = 3
@@ -54,9 +53,13 @@ def load_data(filename):
     is 1 if spam, and 0 otherwise.
     """
     print("Loading data...")
-    df = pd.read_csv(filename, header=None)  # read csv file
-    features = df.iloc[:, :-1].values  # get features
-    labels = df.iloc[:, -1].values  # get labels
+    features = []
+    labels = []
+    with open(filename, newline="") as csvfile:
+        reader = csv.reader(csvfile, delimiter=",")
+        for row in reader:
+            features.append([float(i) for i in row[:-1]])
+            labels.append(int(row[-1]))
     print("Data loaded.")
     return features, labels
 
@@ -136,9 +139,9 @@ def main():
     mlp_tp, mlp_fp, mlp_tn, mlp_fn = confusion_matrix(y_test, mlp_predictions)
     mlp_accuracy, mlp_precision, mlp_recall, mlp_f1 = evaluate(y_test, mlp_predictions)
     print("Data preprocessed.")
+
     print("Plotting results...")
-    for i in tqdm(range(100)):
-        time.sleep(0.02)
+
 
     # Plot confusion matrix
     confusion_matrix_fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
