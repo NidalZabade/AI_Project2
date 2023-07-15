@@ -15,7 +15,7 @@ AI_Project2
 ├── data
 │   └── spambase.csv
 ├── docs
-│   └── AI_Report.pdf
+│   └── Email Classification Report.pdf
 ├── src
 │   ├── main.py
 │   └── spambase.csv
