@@ -156,7 +156,7 @@ def main():
     ax1.text(1, 0, mlp_fp, ha="center", va="center", color="black")
     ax1.text(1, 1, mlp_tn, ha="center", va="center", color="black")
     ax2.matshow([[knn_tp, knn_fp], [knn_fn, knn_tn]], cmap=plt.cm.Blues)
-    ax2.set_title("k-NN")
+    ax2.set_title(f"{K}-NN")
     ax2.set_xlabel("Predicted")
     ax2.set_ylabel("Actual")
     ax2.set_xticks([0, 1])
@@ -182,13 +182,13 @@ def main():
         np.arange(4) + 0.3,
         [knn_accuracy, knn_precision, knn_recall, knn_f1],
         width=0.3,
-        label="k-NN",
+        label=f"{K}-NN",
     )
     ax3.set_ylabel("Score")
     ax3.set_xticks(np.arange(4) + 0.3 / 2)
     ax3.set_xticklabels(["Accuracy", "Precision", "Recall", "F1"])
     ax3.set_ylim([0, 1])
-    ax3.set_title("MLP vs k-NN")
+    ax3.set_title(f"MLP vs {K}-NN")
     ax3.text(0, mlp_accuracy, round(mlp_accuracy, 3), ha="center", va="bottom")
     ax3.text(1, mlp_precision, round(mlp_precision, 3), ha="center", va="bottom")
     ax3.text(2, mlp_recall, round(mlp_recall, 3), ha="center", va="bottom")
