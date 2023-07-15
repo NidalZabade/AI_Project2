@@ -50,6 +50,8 @@ python main.py spambase.csv
 
 ## Project Report
 
+- [Project Report](./docs/Email%20Classification%20Report.pdf)
+
 ## Contributors
 
 - [Nidal Zabade](https://github.com/NidalZabade)
